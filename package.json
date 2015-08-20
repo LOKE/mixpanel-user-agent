@@ -1,0 +1,43 @@
+{
+  "name": "mixpanel-user-agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "mocha": true
+    },
+    "rules": {
+      "consistent-return": 0,
+      "no-return-assign": 0,
+      "key-spacing": 0,
+      "no-multi-spaces": 0,
+      "no-use-before-define": [
+        2,
+        "nofunc"
+      ],
+      "curly": [
+        2,
+        "multi-line"
+      ],
+      "quotes": [
+        2,
+        "single"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LOKE/mixpanel-user-agent.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/LOKE/mixpanel-user-agent/issues"
+  },
+  "homepage": "https://github.com/LOKE/mixpanel-user-agent#readme"
+}
