@@ -3,7 +3,9 @@
 var KEY_BROWSER         = '$browser';
 var KEY_BROWSER_VERSION = '$browser_version';
 var KEY_OS              = '$os';
+var KEY_OS_VERSION      = '$os_version';
 var KEY_DEVICE          = '$device';
+var KEY_MANUFACTURER    = '$manufacturer';
 
 // Based on https://github.com/mixpanel/mixpanel-js
 
@@ -15,12 +17,18 @@ var KEY_DEVICE          = '$device';
  */
 module.exports = function getFieldsForUserAgentString(userAgent, target) {
   var browser = getBrowser(userAgent);
+  var os = getOS(userAgent);
+
   var obj = target || {};
 
   obj[KEY_BROWSER]         = browser;
   obj[KEY_BROWSER_VERSION] = getBrowserVersion(browser, userAgent);
-  obj[KEY_OS]              = getOS(userAgent);
+  obj[KEY_OS]              = os;
   obj[KEY_DEVICE]          = getDevice(userAgent);
+
+  if (os === 'iOS') {
+    obj[KEY_MANUFACTURER] = 'Apple';
+  }
 
   return obj;
 };
